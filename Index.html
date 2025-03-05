@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Safe Navigation App</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_API_KEY&callback=initMap" defer></script>
+</head>
+<body>
+    <div id="sidebar" class="sidebar">
+        <button class="close-btn" onclick="toggleMenu()">×</button>
+        <a href="#">Profile</a>
+        <a href="#">Emergency Contacts</a>
+        <a href="#">Settings</a>
+    </div>
+
+    <header>
+        <button class="menu-btn" onclick="toggleMenu()">☰</button>
+        <h1>Safe Navigation</h1>
+    </header>
+
+    <div id="map"></div>
+
+    <button id="sos-btn" class="sos-button" onclick="startSOS()">SOS</button>
+
+    <div id="sos-modal" class="modal">
+        <div class="modal-content">
+            <h2>Sending SOS in <span id="countdown">5</span> seconds...</h2>
+            <button onclick="cancelSOS()">Cancel</button>
+            <button onclick="skipSOS()">Skip</button>
+        </div>
+    </div>
+
+    <div id="password-modal" class="modal">
+        <div class="modal-content">
+            <h2>Enter 4-Digit Password</h2>
+            <input type="password" id="sos-password" maxlength="4">
+            <button onclick="verifyPassword()">Submit</button>
+        </div>
+    </div>
+
+    <div class="bottom-nav">
+        <a href="#">Home</a>
+        <a href="#">Check-In</a>
+        <a href="#">History</a>
+        <a href="#">Settings</a>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
